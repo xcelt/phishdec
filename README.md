@@ -2,5 +2,6 @@
 
 ## Setup
 ### Prerequisites
+* ~= Python 3.13.0
 
 ## References
