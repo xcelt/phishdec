@@ -1,2 +1,2 @@
-spamassassin/
 venv/
+*.pyc
