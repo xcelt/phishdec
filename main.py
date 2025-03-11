@@ -4,11 +4,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, classification_report
+import matplotlib.pyplot as plt
 import re
 
 # Phishing email datasets
 DATASETS = ['data/phishing_1.csv']
 VALIDATION_DATASET = 'data/validate.csv'
+PHISHING_DISTRIBUTION = 'output/phishing_distribution.png'
 
 # Preprocessing: Clean text (removing unwanted characters, emails)
 def preprocess_text(text):
@@ -25,11 +27,10 @@ def main():
 
         # Read data from csv file
         df = pd.read_csv(data, header=0, index_col=0, names=column_names)
-        df_validate = pd.read_csv(VALIDATION_DATASET, header=0, names=column_names)
+        # df_validate = pd.read_csv(VALIDATION_DATASET, header=0, index_col=0, names=column_names)
 
         # Drop rows where 'email_text' is NaN
         df = df.dropna(subset=['email_text'])
-        df_validate = df_validate.dropna(subset=['email_text'])
         
         df['id'] = range(1, len(df) + 1)
         
@@ -38,17 +39,23 @@ def main():
 
         # Map data isPhishing label: 1 for phishing, 0 for non-phishing
         df['isPhishing'] = df['isPhishing'].map({'Phishing Email': 1, 'Safe Email': 0})
-        df_validate['isPhishing'] = df_validate['isPhishing'].map({'Phishing Email': 1, 'Safe Email': 0})
+        # df_validate['isPhishing'] = df_validate['isPhishing'].map({'Phishing Email': 1, 'Safe Email': 0})
 
         print(df.head())
         # print("\nCount of NaN values per column:")
         # print(df.isna().sum())
-        print(df['isPhishing'].value_counts())
-        print()
-        print(df_validate['isPhishing'].value_counts())
+        phishing_counts = df['isPhishing'].value_counts()
+        print(phishing_counts)
+        phishing_counts.plot(kind = 'bar')
+        plt.title(f'Phishing Email Distribution')
+        plt.ylabel(f'Number of Emails')
+        plt.savefig(PHISHING_DISTRIBUTION)
+        print('Bar chart saved to', PHISHING_DISTRIBUTION)
+        # print(df_validate['isPhishing'].value_counts())
 
         df['cleaned_email'] = df['email_text'].apply(preprocess_text)
         print(df.head())
+        df_clean = df[['id', 'cleaned_email', 'isPhishing']]
 
         # Split the dataset into training and testing sets
         X = df['cleaned_email']
@@ -74,23 +81,23 @@ def main():
         print('Classification Report:')
         print(report)
 
-        # Validate data and model
-        z_pred = df_validate.predict(X_test_tfidf)
-        accuracy_v = accuracy_score(y_test, z_pred)
-        report_v = classification_report(y_test, z_pred)
-        print(f'Accuracy (Validate): {accuracy_v:.4f}')
-        print('Classification Report (Validate):')
-        print(report_v)
+        # # Validate data and model
+        # z_pred = df_validate.predict(X_test_tfidf)
+        # accuracy_v = accuracy_score(y_test, z_pred)
+        # report_v = classification_report(y_test, z_pred)
+        # print(f'Accuracy (Validate): {accuracy_v:.4f}')
+        # print('Classification Report (Validate):')
+        # print(report_v)
 
         dataset_number = i + 1
         clean_data = f'data/clean_{dataset_number}.csv'
-        clean_validate_data = f'data/clean_validate_{dataset_number}.csv'
+        # clean_validate_data = f'data/clean_validate_{dataset_number}.csv'
 
         # Save clean data to csv file
-        df.to_csv(clean_data, index=False)
-        df_validate.to_csv(clean_validate_data, index=False)
+        df_clean.to_csv(clean_data, index=False)
+        # df_validate.to_csv(clean_validate_data, index=False)
         print('Clean data saved to', clean_data)
-        print('Clean validate data saved to', clean_validate_data)
+        # print('Clean validate data saved to', clean_validate_data)
 
         result = f'output/model_evaluation_{dataset_number}.txt'
         
@@ -100,25 +107,9 @@ def main():
             file.write('\nClassification Report:\n')
             file.write(report)
 
-            file.write(f'Accuracy (Validate): {accuracy_v:.4f}\n')
-            file.write('\nClassification Report (Validate):\n')
-            file.write(report_v)
-
-        print('Output written to', result)
+        print('Evaluation report saved to', result)
 
         
 
 if __name__ == '__main__':
     main()
-
-
-# # Sample prediction
-# sample_email = "Congratulations, you've won a free iPhone! Claim your prize now."
-# processed_sample_email = preprocess_text(sample_email)
-# sample_tfidf = vectorizer.transform([processed_sample_email])
-# prediction = model.predict(sample_tfidf)
-
-# if prediction == 1:
-#     print("The email is Phishing.")
-# else:
-#     print("The email is Not Phishing.")
