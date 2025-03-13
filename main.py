@@ -55,6 +55,7 @@ def main():
         phishing_counts.plot(kind='bar', title='Phishing Email Distribution')
         plt.ylabel(f'Number of Emails')
         plt.savefig(PHISHING_DISTRIBUTION)
+        plt.close()
         print('Bar chart saved to', PHISHING_DISTRIBUTION)
         # print(df_validate['isPhishing'].value_counts())
 
@@ -67,26 +68,29 @@ def main():
         y = df['isPhishing']
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-        y_train_dist = y_train.value_counts()
-        print(y_train_dist)
-        y_train_dist.plot(kind='bar', title='Phishing Email Distribution (Train data)')
+        y_train_counts = y_train.value_counts()
+        print(y_train_counts)
+        y_train_counts.plot(kind='bar', title='Phishing Email Distribution (Train data)')
         plt.ylabel(f'Number of Emails')
         plt.savefig(PHISHING_DISTRIBUTION_TRAIN)
+        plt.close()
         print('Bar chart (train data) saved to', PHISHING_DISTRIBUTION_TRAIN)
-        y_test_dist = y_test.value_counts()
-        print(y_test_dist)
-        y_test_dist.plot(kind='bar', title='Phishing Email Distribution (Test data)')
+        y_test_counts = y_test.value_counts()
+        print(y_test_counts)
+        y_test_counts.plot(kind='bar', title='Phishing Email Distribution (Test data)')
         plt.ylabel(f'Number of Emails')
         plt.savefig(PHISHING_DISTRIBUTION_TEST)
+        plt.close()
         print('Bar chart (test data) saved to', PHISHING_DISTRIBUTION_TEST)
 
-
-        # fig, ax = plt.subplots()
-        # for i, d in enumerate([phishing_counts, y_train, y_test], start=1):
-        #     ax.bar(d, label=f"dataset {i}")
-        # ax.legend()
-        # plt.savefig(PHISHING_DISTRIBUTION_ALL)
-
+        dfs = [phishing_counts, y_train_counts, y_test_counts]
+        combined = pd.concat(dfs)
+        print(combined)
+        combined.plot(kind='bar', title='Phishing Email Distribution (All, train, test data')
+        plt.ylabel(f'Number of Emails')
+        plt.savefig(PHISHING_DISTRIBUTION_ALL)
+        plt.close()
+        print('Bar chart (combined) saved to', PHISHING_DISTRIBUTION_ALL)
 
         # Convert text data to numerical features using TF-IDF
         vectorizer = TfidfVectorizer(max_features=5000)
