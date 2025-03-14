@@ -21,11 +21,11 @@ def set_up_data(filename: str, column_names: list, dataset_number: int):
     print("\nCount of NaN values per column:")
     print(df.isna().sum())
 
-    # Option 1: Drop rows where 'email_text' is NaN
-    df = df.dropna(subset=['email_text'])
+    # # Option 1: Drop rows where 'email_text' is NaN
+    # df = df.dropna(subset=['email_text'])
 
-    # # Option 2: Fill/Impute NaN Values
-    # df = df.fillna("N/A")
+    # Option 2: Fill/Impute NaN Values
+    df = df.fillna("N/A")
     
     df['id'] = range(1, len(df) + 1)
     
