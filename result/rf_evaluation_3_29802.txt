@@ -1,0 +1,32 @@
+Dataset: data/enron.csv
+Model: Random Forest
+Accuracy: 0.9456
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[7145  700]
+ [ 110 6928]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.91      0.95      7845
+           1       0.91      0.98      0.94      7038
+
+    accuracy                           0.95     14883
+   macro avg       0.95      0.95      0.95     14883
+weighted avg       0.95      0.95      0.95     14883
+
+Top 10 Most Important Text Features:
+        feature  importance
+679          cc    0.025527
+173          am    0.024236
+332    attached    0.017514
+793       click    0.008169
+620  california    0.004989
+830         com    0.004635
+194   ancillary    0.003001
+383     awarded    0.002880
+842    comments    0.002641
+621        call    0.002519

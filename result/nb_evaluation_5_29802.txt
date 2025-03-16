@@ -1,0 +1,19 @@
+Dataset: data/spamassassin.csv
+Model: Naive Bayes
+Accuracy: 0.9707
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[2028   25]
+ [  60  791]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.99      0.98      2053
+           1       0.97      0.93      0.95       851
+
+    accuracy                           0.97      2904
+   macro avg       0.97      0.96      0.96      2904
+weighted avg       0.97      0.97      0.97      2904

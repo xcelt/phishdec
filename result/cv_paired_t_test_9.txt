@@ -1,0 +1,3 @@
+5x2 Cross-Validation Paired t-test
+Dataset: data/trec_07.csv
+t statistic: 2.054423344556975, p-value: 0.09510579156139672n

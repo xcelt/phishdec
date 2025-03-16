@@ -1,0 +1,19 @@
+Dataset: data/enron.csv
+Model: Naive Bayes
+Accuracy: 0.9731
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[7686  196]
+ [ 204 6797]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97      7882
+           1       0.97      0.97      0.97      7001
+
+    accuracy                           0.97     14883
+   macro avg       0.97      0.97      0.97     14883
+weighted avg       0.97      0.97      0.97     14883

@@ -1,0 +1,19 @@
+Dataset: data/trec_06.csv
+Model: Naive Bayes
+Accuracy: 0.9202
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[6169   55]
+ [ 600 1384]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.91      0.99      0.95      6224
+           1       0.96      0.70      0.81      1984
+
+    accuracy                           0.92      8208
+   macro avg       0.94      0.84      0.88      8208
+weighted avg       0.92      0.92      0.92      8208

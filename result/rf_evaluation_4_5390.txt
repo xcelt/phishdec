@@ -1,0 +1,32 @@
+Dataset: data/ling.csv
+Model: Random Forest
+Accuracy: 0.9496
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[1214    0]
+ [  72  143]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.94      1.00      0.97      1214
+           1       1.00      0.67      0.80       215
+
+    accuracy                           0.95      1429
+   macro avg       0.97      0.83      0.89      1429
+weighted avg       0.95      0.95      0.95      1429
+
+Top 10 Most Important Text Features:
+      feature  importance
+776     click    0.018002
+593  business    0.011022
+835       com    0.009513
+713     check    0.006063
+863   company    0.004299
+91      adult    0.004136
+482      best    0.004082
+651      cash    0.003350
+598       buy    0.003003
+152       all    0.002852

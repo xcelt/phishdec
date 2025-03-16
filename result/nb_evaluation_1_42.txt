@@ -1,0 +1,19 @@
+Dataset: data/phishing.csv
+Model: Naive Bayes
+Accuracy: 0.9552
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[2184   89]
+ [  78 1379]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.96      0.96      2273
+           1       0.94      0.95      0.94      1457
+
+    accuracy                           0.96      3730
+   macro avg       0.95      0.95      0.95      3730
+weighted avg       0.96      0.96      0.96      3730

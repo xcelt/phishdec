@@ -1,0 +1,3 @@
+5x2 Cross-Validation Paired t-test
+Dataset: data/spamassassin.csv
+t statistic: 5.789392580708063, p-value: 0.0021649586601001094n

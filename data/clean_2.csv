@@ -1,4 +1,4 @@
-id,cleaned_email,isPhishing
+id,clean_email,isPhishing
 1,dear jordan your subscription has been successfully renewed thank you for your continued support,0
 2,dear casey thank you for your purchase your order will be shipped soon,0
 3,congratulations youve won a  gift card click here to claim your prize,1

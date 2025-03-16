@@ -1,0 +1,3 @@
+5x2 Cross-Validation Paired t-test
+Dataset: data/ling.csv
+t statistic: 4.090788672043923, p-value: 0.0094395249388169n
