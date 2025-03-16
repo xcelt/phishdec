@@ -1,0 +1,19 @@
+Dataset: data/ceas_08.csv
+Model: Naive Bayes
+Accuracy: 0.9598
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[3358   21]
+ [ 290 4065]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.92      0.99      0.96      3379
+           1       0.99      0.93      0.96      4355
+
+    accuracy                           0.96      7734
+   macro avg       0.96      0.96      0.96      7734
+weighted avg       0.96      0.96      0.96      7734

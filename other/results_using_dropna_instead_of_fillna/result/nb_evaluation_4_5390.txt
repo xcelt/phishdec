@@ -1,0 +1,19 @@
+Dataset: data/ling.csv
+Model: Naive Bayes
+Accuracy: 0.9864
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[1188    0]
+ [  19  191]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99      1188
+           1       1.00      0.91      0.95       210
+
+    accuracy                           0.99      1398
+   macro avg       0.99      0.95      0.97      1398
+weighted avg       0.99      0.99      0.99      1398

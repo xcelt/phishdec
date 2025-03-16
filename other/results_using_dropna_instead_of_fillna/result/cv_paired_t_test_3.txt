@@ -1,0 +1,3 @@
+5x2 Cross-Validation Paired t-test
+Dataset: data/enron.csv
+t statistic: 10.741120534107328, p-value: 0.00012121235208929213n

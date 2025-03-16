@@ -1,0 +1,32 @@
+Dataset: data/spamassassin.csv
+Model: Random Forest
+Accuracy: 0.9251
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[1911   11]
+ [ 198  671]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.91      0.99      0.95      1922
+           1       0.98      0.77      0.87       869
+
+    accuracy                           0.93      2791
+   macro avg       0.94      0.88      0.91      2791
+weighted avg       0.93      0.93      0.92      2791
+
+Top 10 Most Important Text Features:
+                     feature  importance
+766                    click    0.045918
+431                    below    0.018728
+944  contenttransferencoding    0.014250
+585                      but    0.012912
+945              contenttype    0.007532
+711               charsetiso    0.006901
+582                 business    0.006090
+58                   address    0.005368
+842                  company    0.005311
+934                  contact    0.004595

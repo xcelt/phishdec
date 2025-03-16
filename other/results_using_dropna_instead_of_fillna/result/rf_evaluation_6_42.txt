@@ -1,0 +1,32 @@
+Dataset: data/ceas_08.csv
+Model: Random Forest
+Accuracy: 0.9611
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[3135  244]
+ [  57 4298]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.93      0.95      3379
+           1       0.95      0.99      0.97      4355
+
+    accuracy                           0.96      7734
+   macro avg       0.96      0.96      0.96      7734
+weighted avg       0.96      0.96      0.96      7734
+
+Top 10 Most Important Text Features:
+    feature  importance
+540     but    0.027328
+387      be    0.021816
+750    code    0.009311
+298      at    0.008003
+193     any    0.007552
+554   cable    0.007542
+400    been    0.007163
+743     cnn    0.006100
+146      am    0.005992
+245     are    0.005619

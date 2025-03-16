@@ -1,0 +1,32 @@
+Dataset: data/phishing.csv
+Model: Random Forest
+Accuracy: 0.8894
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[5694   43]
+ [ 987 2593]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.85      0.99      0.92      5737
+           1       0.98      0.72      0.83      3580
+
+    accuracy                           0.89      9317
+   macro avg       0.92      0.86      0.88      9317
+weighted avg       0.90      0.89      0.89      9317
+
+Top 10 Most Important Text Features:
+        feature  importance
+674          cc    0.019160
+784       click    0.019095
+469        best    0.007904
+595         but    0.007526
+912  conference    0.006377
+169          am    0.006074
+592    business    0.005980
+828         com    0.005806
+860     company    0.004184
+342    attached    0.003232

@@ -1,0 +1,32 @@
+Dataset: data/trec_05.csv
+Model: Random Forest
+Accuracy: 0.9077
+
+Confusion Matrix:
+True Positive (TP)     False Negative (FN)
+False Positive (FP)     True Negative (TN)
+[[14562   936]
+ [ 1444  8840]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.91      0.94      0.92     15498
+           1       0.90      0.86      0.88     10284
+
+    accuracy                           0.91     25782
+   macro avg       0.91      0.90      0.90     25782
+weighted avg       0.91      0.91      0.91     25782
+
+Top 10 Most Important Text Features:
+       feature  importance
+318   attached    0.016813
+669         cc    0.015754
+163         am    0.013059
+602       call    0.010418
+218        any    0.005339
+758     cialis    0.004951
+356    awarded    0.003856
+72       adobe    0.003451
+185  ancillary    0.003268
+37     acrobat    0.003119
