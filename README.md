@@ -1,5 +1,11 @@
 # Phishdec Project: Evaluating Phishing Email Detection Classification Models
 
+An artefact for the dissertation:
+
+Phishing Email Detection using Naive Bayes and Random Forest Classification Models and Curated Datasets
+
+By Xue Ling Teh
+
 ## Overview
 ### Datasets*
 1. phishing
@@ -16,11 +22,11 @@
 
 #### Data preprocessing and cleaning
 One of the following options:
-* Drop empty rows with null, NA or NaN values - relatively poor results
+* Drop empty rows with null, NA or NaN values
 
 OR
 
-* Impute/Fill NA or NaN values - best results
+* Impute/Fill NA or NaN values
 
 ### Model Types
 1. Naive Bayes (NB): Multinomial
