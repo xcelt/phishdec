@@ -1,4 +1,3 @@
-
 """Utility module"""
 
 import re
