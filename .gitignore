@@ -1,3 +1,10 @@
+ceas_08.csv
+trec_05.csv
+trec_07.csv
+clean_6.csv
+clean_7.csv
+clean_9.csv
+artefact*.zip
 venv/
 __pycache__
 *.pyc
