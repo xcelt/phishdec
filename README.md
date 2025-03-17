@@ -2,7 +2,7 @@
 
 An artefact for the dissertation:
 
-A Comparison between Traditional Naive Bayes and Ensemble Random Forest in Phishing Email Classification using Curated Datasets
+Phishing Email Detection: A Comparison of Traditional Naive Bayes and Ensemble Random Forest Classification Models using Curated Datasets
 
 By Xue Ling Teh
 
