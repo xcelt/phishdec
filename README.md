@@ -1,8 +1,8 @@
-# Phishdec Project: Evaluating Phishing Email Detection Classification Models
+# Phishdec Project: Evaluating Phishing Email Classification Models
 
 An artefact for the dissertation:
 
-Phishing Email Detection using Naive Bayes and Random Forest Classification Models and Curated Datasets
+A Comparison between Traditional Naive Bayes and Ensemble Random Forest in Phishing Email Classification using Curated Datasets
 
 By Xue Ling Teh
 
